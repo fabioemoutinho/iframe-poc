@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve parent & ng serve child",
+    "start": "ng serve parent & ng build child --watch & npm run serve-child",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "serve-child": "serve dist/child/browser -l 4201 --config ../../../serve.json"
   },
   "private": true,
   "dependencies": {
@@ -33,6 +34,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "serve": "^14.2.3",
     "typescript": "~5.5.2"
   }
 }
